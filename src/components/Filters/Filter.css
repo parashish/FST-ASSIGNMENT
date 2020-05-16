@@ -1,22 +1,11 @@
-.side-filter-box {
-  border: 1px solid #000000;
-  margin: 20px;
-  padding: 10px;
-  padding-left: 20px;
-  text-align: left;
+.filter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .selected-filters .item .fa-times {
   cursor: pointer;
-}
-
-.side-filter-box .form-check {
-  display: inline-flex;
-  width: 100%;
-}
-
-.side-filter-box .form-check input.form-check-input {
-  margin-top: 13px;
 }
 
 .selected-filters {
@@ -38,9 +27,13 @@
   border-radius: 8px;
   text-align: center;
   height: 48px;
+  background-color: #003349;
 }
 
-.filter-header {
-  display: flex;
-  padding-left: 2rem;
+.sidebar-section .fa-plus-circle {
+  cursor: pointer;
+}
+
+.fa-plus-circle:before {
+  font-size: 24px;
 }

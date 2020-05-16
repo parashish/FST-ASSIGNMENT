@@ -1,0 +1,50 @@
+body {
+  background-color: #e5eaef;
+}
+.whole-loader {
+  left: 50%;
+  margin-left: -10em;
+  position: fixed;
+  top: 50%;
+}
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.main-wrapper {
+  display: block;
+  margin: 20px;
+}
+
+.filter-section {
+  width: 100%;
+}
+.main-section {
+  width: 100%;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .main-wrapper {
+    display: flex;
+  }
+  .filter-section {
+    width: 25%;
+    margin-right: 20px;
+  }
+  .main-section {
+    width: 75%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .main-wrapper {
+    display: flex;
+  }
+  .filter-section {
+    width: 25%;
+    margin-right: 20px;
+  }
+  .main-section {
+    width: 75%;
+  }
+}

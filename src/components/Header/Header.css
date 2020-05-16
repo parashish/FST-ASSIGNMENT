@@ -2,3 +2,149 @@
   float: left;
   font-size: 35px;
 }
+.selected-filters-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.multi-select-container {
+  display: block;
+  position: relative;
+}
+
+.multi-select-container .multi-option-container {
+  position: absolute;
+  width: 100%;
+  z-index: 9;
+  background-color: #f1f1f1;
+  border: 1px solid #8a8a8a;
+  display: none;
+  top: 30px;
+}
+
+.selected-item {
+  display: flex;
+  height: 40px;
+  width: 40%;
+  background: #003349;
+  border-radius: 16px;
+  padding: 8px 12px 8px 8px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  margin-right: 8px;
+  color: white;
+}
+
+.search-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+input[type='search'] {
+  border-radius: 5px 0px 0px 5px;
+  background: #425265;
+  padding: 12px 10px;
+  line-height: normal;
+  color: white;
+  width: 75%;
+  max-height: 50px;
+  border: none;
+}
+input[type='search']::placeholder {
+  color: white;
+}
+
+input[type='search']:-ms-input-placeholder {
+  color: white;
+}
+
+input[type='search']::placeholder {
+  color: white;
+}
+
+.search-button {
+  font-size: 1.1em;
+  width: 25%;
+  letter-spacing: 1px;
+  border-radius: 0px 5px 5px 0px;
+  background: silver;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
+  max-height: 50px;
+}
+.search-button:hover {
+  background: skyblue;
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  background: #425265;
+  color: white;
+  padding: 12px 10px;
+  width: 200px;
+  width: 100%;
+  margin-bottom: 16px;
+  max-height: 50px;
+  border-radius: 5px;
+}
+.sort-id-container {
+  position: relative;
+}
+.fa-chevron-down {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .search-sort-filter-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  .selected-item {
+    width: 25%;
+  }
+
+  .search-container {
+    margin-bottom: 0;
+  }
+
+  .search-button {
+    width: 100px;
+  }
+  input[type='search'] {
+    width: 200px;
+  }
+  select {
+    width: 200px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .selected-item {
+    width: 15%;
+  }
+  .search-container {
+    margin-bottom: 0;
+  }
+
+  .search-sort-filter-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  .search-button {
+    width: 100px;
+  }
+  input[type='search'] {
+    width: 200px;
+  }
+  select {
+    width: 200px;
+  }
+}

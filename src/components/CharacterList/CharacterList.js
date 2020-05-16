@@ -1,48 +1,53 @@
 import React from 'react';
+import './CharacterList.css';
 
-function CharacterList(props) {
+const CharacterList = (props) => {
+  const {
+    image,
+    name,
+    status,
+    species,
+    gender,
+    origin,
+    location,
+    created,
+  } = props.character;
+
+  const getIdCreationYears = () => {
+    return `Created ${
+      parseInt(new Date().getFullYear()) -
+      parseInt(new Date(created).getFullYear())
+    } years ago`;
+  };
+
   return (
     <React.Fragment>
-      <div className="col-sm-3 col-xs-6 character-content">
-        <div className="character">
-          <div className="image-container">
-            <img src={props.character.image} alt="character" />
-            <p className="name-container">
-              {props.character.name}
-              <br />
-              <span className="id-age">
-                Id: {props.character.id} - created 2 years ago
-              </span>
-            </p>
-          </div>
-          <table className="table">
-            <tbody>
-              <tr>
-                <td className="td-label">STATUS</td>
-                <td className="td-value">{props.character.status}</td>
-              </tr>
-              <tr>
-                <td className="td-label">SPECIES</td>
-                <td className="td-value">{props.character.species}</td>
-              </tr>
-              <tr>
-                <td className="td-label">GENDER</td>
-                <td className="td-value">{props.character.gender}</td>
-              </tr>
-              <tr>
-                <td className="td-label">ORIGIN</td>
-                <td className="td-value">{props.character.origin.name}</td>
-              </tr>
-              <tr>
-                <td className="td-label">LAST LOCATION</td>
-                <td className="td-value">{props.character.location.name}</td>
-              </tr>
-            </tbody>
-          </table>
+      <div id="id" className="card">
+        <img src={image} alt={name} />
+        <div className="transparent">
+          <p>{name}</p>
+          <p>ID {getIdCreationYears()}</p>
         </div>
+        <ul className="character-info">
+          <li>
+            Status: <span>{status} </span>
+          </li>
+          <li>
+            Species: <span> {species}</span>
+          </li>
+          <li>
+            Gender: <span>{gender}</span>
+          </li>
+          <li>
+            Origin: <span>{origin.name}</span>
+          </li>
+          <li>
+            Last Location:<span>{location.name}</span>
+          </li>
+        </ul>
       </div>
     </React.Fragment>
   );
-}
+};
 
 export default CharacterList;

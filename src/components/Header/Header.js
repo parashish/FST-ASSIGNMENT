@@ -2,81 +2,87 @@ import React from 'react';
 import './Header.css';
 
 function Header(props) {
+  const {
+    selected,
+    onRemoveItem,
+    onSearch,
+    nameFilterOptions,
+    onChangeObject,
+  } = props;
+
+  const { species, gender, origin, names } = selected;
+  const speciesArrayWithType = species.map((item) => {
+    return { name: item, filtertType: 'selectedSpecies' };
+  });
+  const namesArrayWithType = names.map((item) => {
+    return { name: item, filtertType: 'selectedNames' };
+  });
+  const originArrayWithType = origin.map((item) => {
+    return { name: item, filtertType: 'selectedOrigin' };
+  });
+  const genderArrayWithType = gender.map((item) => {
+    return { name: item, filtertType: 'selectedGender' };
+  });
+  const allSelected = [
+    ...speciesArrayWithType,
+    ...namesArrayWithType,
+    ...originArrayWithType,
+    ...genderArrayWithType,
+  ];
+
   return (
     <React.Fragment>
-      <div className="row selected-filters">
-        <div className="col-12">
-          {' '}
-          <h3>Selected Filters</h3>{' '}
-        </div>
-        <div className="col-12 row">
-          {props.selected.names.length > 0 && (
-            <React.Fragment>
-              {props.selected.names.map((name, idx) => {
-                return (
-                  <div key={idx} className="col-sm-2 col-xs-4 item">
-                    <span>{name} </span>
-                    <i
-                      className="fa fa-times"
-                      aria-hidden="true"
-                      onClick={() => props.onRemoveItem(name)}
-                    ></i>
-                  </div>
-                );
-              })}
-            </React.Fragment>
-          )}
-        </div>
+      <div className="selected-filters">
+        {' '}
+        <h3>Selected Filters</h3>{' '}
       </div>
-      <br />
-      <div className="row">
-        <div className="col-sm-9 row">
-          <div className="form-group col-sm-4 multi-select-container">
-            Search by Name
+      {allSelected.length > 0 && (
+        <div className="selected-filters-wrapper">
+          {allSelected.map((item, idx) => {
+            return (
+              <div key={idx} className="selected-item">
+                <span>{item.name} </span>
+                <i
+                  className="fa fa-times"
+                  aria-hidden="true"
+                  onClick={() => onRemoveItem(item.name, item.filtertType)}
+                ></i>
+              </div>
+            );
+          })}
+        </div>
+      )}
+      <div className="search-sort-filter-wrapper">
+        <div className="multi-select-container">
+          <div className="search-container">
             <input
-              className="form-control search-by-name"
-              type="text"
+              className="search-by-name"
               placeholder="Search by Name"
-              value={props.nameFilterOptions}
+              value={nameFilterOptions}
               name="nameFilterOptions"
-              onChange={(e) => props.onChangeObject(e)}
+              onChange={(e) => onChangeObject(e)}
+              type="search"
+              aria-label="Search by character first name or last name"
             />
-            <div className="multi-option-container">
-              {props.filterOptions.names
-                .filter((name) => {
-                  return name.toLowerCase().includes(props.nameFilterOptions);
-                })
-                .map((name, idx) => {
-                  return (
-                    <div key={idx} className="form-check">
-                      <input
-                        type="checkbox"
-                        className="form-check-input"
-                        name="selectedNames"
-                        checked={props.selected.names.indexOf(name) !== -1}
-                        value={name}
-                        onChange={(e) => props.onChangeCheckboxObject(e)}
-                      />
-                      <label className="form-check-label"> {name} </label>
-                    </div>
-                  );
-                })}
-            </div>
+            <button
+              aria-label="Search"
+              className="search-button"
+              name="selectedNames"
+              onClick={(e) => onSearch(e)}
+            >
+              Search
+            </button>
           </div>
         </div>
-        <div className="col-sm-3">
-          <div className="form-group sort-id-container">
-            Sort by ID
-            <select
-              className="form-control"
-              name="sortById"
-              onChange={(e) => props.onChangeObject(e)}
-            >
-              <option disabled>Sort by ID</option>
-              <option value="asc">Ascending</option>
-              <option value="desc">Descending</option>
-            </select>
-          </div>
+        <div className="sort-id-container">
+          <select name="sortById" onChange={(e) => onChangeObject(e)}>
+            <option selected disabled>
+              Sort by ID
+            </option>
+            <option value="asc">Ascending</option>
+            <option value="desc">Descending</option>
+          </select>
+          <i class="fa fa-chevron-down" aria-hidden="true"></i>
         </div>
       </div>
     </React.Fragment>

@@ -1,0 +1,29 @@
+.side-filter-box {
+  border: 1px solid #000000;
+  margin-bottom: 16px;
+  padding-left: 20px;
+  text-align: left;
+  background-color: #003349;
+  color: rgb(255, 255, 255);
+}
+.side-filter-box input {
+  text-align: left;
+}
+
+.side-filter-box .filter-form-group {
+  display: -webkit-inline-box;
+  float: left;
+}
+
+.side-filter-box .form-check {
+  display: inline-flex;
+  width: 100%;
+}
+
+.side-filter-box .form-check input.form-check-input {
+  margin-top: 13px;
+}
+
+.form-check-label {
+  margin: 10px;
+}
