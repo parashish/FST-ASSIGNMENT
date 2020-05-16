@@ -1,5 +1,6 @@
 import React from 'react';
 import './Filter.css';
+import PropTypes from 'prop-types';
 import SideFilterBox from '../SideFilterBox/SideFilterBox';
 
 const Filters = (props) => {
@@ -28,7 +29,7 @@ const Filters = (props) => {
             title="Show/Hide Filters"
             aria-hidden="true"
             onClick={() => onClickShowFilters()}
-          ></i>
+          />
         ) : null}
       </div>
 
@@ -40,25 +41,34 @@ const Filters = (props) => {
             selectedFilters={species}
             onChange={onChangeCheckboxObject}
             inputName="selectedSpecies"
-          ></SideFilterBox>
+          />
           <SideFilterBox
             name="Gender"
             filteroptions={genderFilters}
             selectedFilters={gender}
             onChange={onChangeCheckboxObject}
             inputName="selectedGender"
-          ></SideFilterBox>
+          />
           <SideFilterBox
             name="Origin"
             filteroptions={originFilters}
             selectedFilters={origin}
             onChange={onChangeCheckboxObject}
             inputName="selectedOrigin"
-          ></SideFilterBox>
+          />
         </React.Fragment>
       )}
     </React.Fragment>
   );
+};
+
+Filters.propTypes = {
+  onClickShowFilters: PropTypes.func.isRequired,
+  showFiltersOnMobile: PropTypes.bool.isRequired,
+  screenSize: PropTypes.object.isRequired,
+  filterOptions: PropTypes.object.isRequired,
+  selected: PropTypes.object.isRequired,
+  onChangeCheckboxObject: PropTypes.func.isRequired,
 };
 
 export default Filters;

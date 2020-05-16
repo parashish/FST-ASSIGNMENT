@@ -1,5 +1,5 @@
 {
-  "name": "ps-xt",
+  "name": "fss-assignment",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -36,6 +36,7 @@
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.6",
     "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1"
+    "babel-preset-react": "^6.24.1",
+    "prop-types": "^15.7.2"
   }
 }

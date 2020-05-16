@@ -1,7 +1,8 @@
 import React from 'react';
 import './Header.css';
+import PropTypes from 'prop-types';
 
-function Header(props) {
+const Header = (props) => {
   const {
     selected,
     onRemoveItem,
@@ -34,19 +35,22 @@ function Header(props) {
     <React.Fragment>
       <div className="selected-filters">
         {' '}
-        <h3>Selected Filters</h3>{' '}
+        <h3>Selected Filters</h3>
       </div>
       {allSelected.length > 0 && (
         <div className="selected-filters-wrapper">
-          {allSelected.map((item, idx) => {
+          {allSelected.map((item) => {
             return (
-              <div key={idx} className="selected-item">
-                <span>{item.name} </span>
+              <div
+                key={`${item.name}-${item.filtertType}`}
+                className="selected-item"
+              >
+                <span>{item.name}</span>
                 <i
                   className="fa fa-times"
                   aria-hidden="true"
                   onClick={() => onRemoveItem(item.name, item.filtertType)}
-                ></i>
+                />
               </div>
             );
           })}
@@ -65,6 +69,7 @@ function Header(props) {
               aria-label="Search by character first name or last name"
             />
             <button
+              type="button"
               aria-label="Search"
               className="search-button"
               name="selectedNames"
@@ -84,11 +89,19 @@ function Header(props) {
             <option value="asc">Ascending</option>
             <option value="desc">Descending</option>
           </select>
-          <i className="fa fa-chevron-down" aria-hidden="true"></i>
+          <i className="fa fa-chevron-down" aria-hidden="true" />
         </div>
       </div>
     </React.Fragment>
   );
-}
+};
+
+Header.propTypes = {
+  selected: PropTypes.object.isRequired,
+  onRemoveItem: PropTypes.func.isRequired,
+  onSearch: PropTypes.func.isRequired,
+  nameFilterOptions: PropTypes.string.isRequired,
+  onChangeObject: PropTypes.func.isRequired,
+};
 
 export default Header;
