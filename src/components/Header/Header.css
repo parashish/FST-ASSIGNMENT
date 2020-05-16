@@ -69,7 +69,7 @@ input[type='search']::placeholder {
   width: 25%;
   letter-spacing: 1px;
   border-radius: 0px 5px 5px 0px;
-  background: silver;
+  background: #4390b7;
   color: white;
   border: none;
   padding: 4px 8px;
@@ -98,7 +98,10 @@ select {
 .fa-chevron-down {
   position: absolute;
   top: 10px;
-  right: 16px;
+  right: 12px;
+}
+.fa-chevron-down::before {
+  color: white;
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {

@@ -22,7 +22,7 @@ const CharacterList = (props) => {
 
   return (
     <React.Fragment>
-      <div id="id" className="card">
+      <div className="card">
         <img src={image} alt={name} />
         <div className="transparent">
           <p>{name}</p>

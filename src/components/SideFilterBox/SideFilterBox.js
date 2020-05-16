@@ -21,7 +21,7 @@ const SideFilterBox = (props) => {
             <label
               aria-label={name}
               className="form-check-label"
-              for={`${item}-${name}`}
+              htmlFor={`${item}-${name}`}
             >
               {item}
             </label>

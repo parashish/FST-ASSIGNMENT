@@ -75,14 +75,16 @@ function Header(props) {
           </div>
         </div>
         <div className="sort-id-container">
-          <select name="sortById" onChange={(e) => onChangeObject(e)}>
-            <option selected disabled>
-              Sort by ID
-            </option>
+          <select
+            name="sortById"
+            aria-label="Sort character list"
+            onChange={(e) => onChangeObject(e)}
+          >
+            <option disabled>Sort by ID</option>
             <option value="asc">Ascending</option>
             <option value="desc">Descending</option>
           </select>
-          <i class="fa fa-chevron-down" aria-hidden="true"></i>
+          <i className="fa fa-chevron-down" aria-hidden="true"></i>
         </div>
       </div>
     </React.Fragment>

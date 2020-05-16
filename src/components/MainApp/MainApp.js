@@ -41,7 +41,7 @@ class MainApp extends React.Component {
     return this.state.showOnlyLoader ? (
       <img className="whole-loader" src={Loader} alt="Loading..." />
     ) : (
-      <div className="main-wrapper">
+      <div className="main-wrapper" role="main">
         <div className="filter-section">
           <Filters
             selected={{
