@@ -1,28 +1,29 @@
+# Fst-Assignment
+
+This project basically consuming rickandmorty cartoon api and some basic filters for get cartoon episode.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Tech Stack
 
-In the project directory, you can run:
+    HTML5
+    JS
+    CSS
+    React
+    Webpack
 
-### `npm start`
+## How to build
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To install all the npm dependency run:-
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+    npm install
 
-### `npm test`
+To run client side application:-
 
-Jest is used for test cases, COverage tool also has been set up for testing the components.
+    npm run start
 
-### `npm run build`
+To make a build of Client side application:-
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+    npm run build
 
 ### Deployed
 
@@ -31,3 +32,26 @@ Heroku is used for static deployment.
 ### Demo
 
 https://fst-assignment.herokuapp.com/
+
+## CODE CONSISTENCY
+
+### ESLINT
+
+create react app by default implemented eslint
+
+"eslintConfig": {
+"extends": "react-app"
+}
+
+### vscode config:-
+
+    {
+    "editor.formatOnSave": true,
+    "prettier.eslintIntegration": true,
+    "prettier.stylelintIntegration": true
+    }
+
+- Extension for VSCode:-
+
+  Prettier - Code formatter
+  ESLint
