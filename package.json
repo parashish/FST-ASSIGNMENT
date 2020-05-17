@@ -16,8 +16,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "./node_modules/jest/bin/jest.js  --config ./config/test/jest.config.js",
-    "eject": "react-scripts eject"
+    "test": "./node_modules/jest/bin/jest.js  --config ./config/test/jest.config.js"
   },
   "eslintConfig": {
     "extends": "react-app"
