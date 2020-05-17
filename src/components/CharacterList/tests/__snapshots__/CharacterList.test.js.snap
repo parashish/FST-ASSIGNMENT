@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CharacterList component should render correctly with props\` and match snapshot 1`] = `
+<Fragment>
+  <div
+    className="card"
+  >
+    <img
+      alt="Rick Sanchez"
+      src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+    />
+    <div
+      className="transparent"
+    >
+      <p>
+        Rick Sanchez
+      </p>
+      <p>
+        ID:
+        Created 3 years ago
+      </p>
+    </div>
+    <ul
+      className="character-info"
+    >
+      <li>
+        Status:
+        <span>
+          Alive
+        </span>
+      </li>
+      <li>
+        Species:
+        <span>
+          Human
+        </span>
+      </li>
+      <li>
+        Gender:
+        <span>
+          Male
+        </span>
+      </li>
+      <li>
+        Origin:
+        <span>
+          Earth (C-137)
+        </span>
+      </li>
+      <li>
+        Last Location:
+        <span>
+          Earth (Replacement Dimension)
+        </span>
+      </li>
+    </ul>
+  </div>
+</Fragment>
+`;

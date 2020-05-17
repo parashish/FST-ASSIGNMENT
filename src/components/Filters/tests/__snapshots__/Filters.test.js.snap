@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filters component should render correctly with props\` and match snapshot 1`] = `
+<Fragment>
+  <div
+    className="filter-header"
+  >
+    <h3>
+      Filters
+    </h3>
+  </div>
+  <SideFilterBox
+    filteroptions={
+      Array [
+        "Human",
+        "Alien",
+      ]
+    }
+    inputName="selectedSpecies"
+    name="Species"
+    onChange={[MockFunction]}
+    selectedFilters={
+      Array [
+        "Human",
+      ]
+    }
+  />
+  <SideFilterBox
+    filteroptions={
+      Array [
+        "Male",
+        "Female",
+        "unknown",
+      ]
+    }
+    inputName="selectedGender"
+    name="Gender"
+    onChange={[MockFunction]}
+    selectedFilters={
+      Array [
+        "Male",
+        "unknown",
+      ]
+    }
+  />
+  <SideFilterBox
+    filteroptions={
+      Array [
+        "Earth (C-137)",
+        "Earth (Replacement Dimension)",
+        "Abadango",
+        "unknown",
+      ]
+    }
+    inputName="selectedOrigin"
+    name="Origin"
+    onChange={[MockFunction]}
+    selectedFilters={
+      Array [
+        "Abadango",
+      ]
+    }
+  />
+</Fragment>
+`;

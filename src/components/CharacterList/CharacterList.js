@@ -16,8 +16,10 @@ const CharacterList = (props) => {
   } = character;
 
   const getIdCreationYears = () => {
-    return `Created ${parseInt(new Date().getFullYear(), 10) -
-      parseInt(new Date(created).getFullYear(), 10)} years ago`;
+    return `Created ${
+      parseInt(new Date().getFullYear(), 10) -
+      parseInt(new Date(created).getFullYear(), 10)
+    } years ago`;
   };
 
   return (
@@ -27,7 +29,7 @@ const CharacterList = (props) => {
         <div className="transparent">
           <p>{name}</p>
           <p>
-            ID
+            ID:
             {getIdCreationYears()}
           </p>
         </div>

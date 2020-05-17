@@ -1,0 +1,142 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component should render correctly with props\` and match snapshot 1`] = `
+<Fragment>
+  <div
+    className="selected-filters"
+  >
+     
+    <h3>
+      Selected Filters
+    </h3>
+  </div>
+  <div
+    className="selected-filters-wrapper"
+  >
+    <div
+      className="selected-item"
+      key="Human-selectedSpecies"
+    >
+      <span>
+        Human
+      </span>
+      <i
+        aria-hidden="true"
+        className="fa fa-times"
+        onClick={[Function]}
+      />
+    </div>
+    <div
+      className="selected-item"
+      key="Rick-selectedNames"
+    >
+      <span>
+        Rick
+      </span>
+      <i
+        aria-hidden="true"
+        className="fa fa-times"
+        onClick={[Function]}
+      />
+    </div>
+    <div
+      className="selected-item"
+      key="Abadango-selectedOrigin"
+    >
+      <span>
+        Abadango
+      </span>
+      <i
+        aria-hidden="true"
+        className="fa fa-times"
+        onClick={[Function]}
+      />
+    </div>
+    <div
+      className="selected-item"
+      key="Male-selectedGender"
+    >
+      <span>
+        Male
+      </span>
+      <i
+        aria-hidden="true"
+        className="fa fa-times"
+        onClick={[Function]}
+      />
+    </div>
+    <div
+      className="selected-item"
+      key="unknown-selectedGender"
+    >
+      <span>
+        unknown
+      </span>
+      <i
+        aria-hidden="true"
+        className="fa fa-times"
+        onClick={[Function]}
+      />
+    </div>
+  </div>
+  <div
+    className="search-sort-filter-wrapper"
+  >
+    <div
+      className="multi-select-container"
+    >
+      <div
+        className="search-container"
+      >
+        <input
+          aria-label="Search by character first name or last name"
+          className="search-by-name"
+          name="nameFilterOptions"
+          onChange={[Function]}
+          placeholder="Search by Name"
+          type="search"
+          value="Rick"
+        />
+        <button
+          aria-label="Search"
+          className="search-button"
+          name="selectedNames"
+          onClick={[Function]}
+          type="button"
+        >
+          Search
+        </button>
+      </div>
+    </div>
+    <div
+      className="sort-id-container"
+    >
+      <select
+        aria-label="Sort character list"
+        name="sortById"
+        onChange={[Function]}
+      >
+        <option
+          disabled={true}
+        >
+          Sort by ID
+        </option>
+        <option
+          value="asc"
+        >
+          Ascending
+        </option>
+        <option
+          value="desc"
+        >
+          Descending
+        </option>
+      </select>
+      <i
+        aria-hidden="true"
+        className="fa fa-chevron-down"
+      />
+    </div>
+  </div>
+</Fragment>
+`;

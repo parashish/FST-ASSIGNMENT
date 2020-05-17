@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SideFilterBox component should render correctly with props\` and match snapshot 1`] = `
+<div
+  className="side-filter-box"
+>
+  <h4>
+    Species
+  </h4>
+  <div
+    className="form-check"
+    key="Alien-Species-key"
+  >
+    <input
+      checked={false}
+      className="form-check-input"
+      id="Alien-Species"
+      name="selectedSpecies"
+      onChange={[Function]}
+      type="checkbox"
+      value="Alien"
+    />
+    <label
+      aria-label="Species"
+      className="form-check-label"
+      htmlFor="Alien-Species"
+    >
+      Alien
+    </label>
+  </div>
+  <div
+    className="form-check"
+    key="Humen-Species-key"
+  >
+    <input
+      checked={true}
+      className="form-check-input"
+      id="Humen-Species"
+      name="selectedSpecies"
+      onChange={[Function]}
+      type="checkbox"
+      value="Humen"
+    />
+    <label
+      aria-label="Species"
+      className="form-check-label"
+      htmlFor="Humen-Species"
+    >
+      Humen
+    </label>
+  </div>
+</div>
+`;
+
+exports[`SideFilterBox component should render correctly with props\` and match snapshot 2`] = `
+<SideFilterBox
+  filteroptions={
+    Array [
+      "Alien",
+      "Humen",
+    ]
+  }
+  inputName="selectedSpecies"
+  name="Species"
+  onChange={[MockFunction]}
+  selectedFilters={
+    Array [
+      "Humen",
+    ]
+  }
+>
+  <div
+    className="side-filter-box"
+  >
+    <h4>
+      Species
+    </h4>
+    <div
+      className="form-check"
+      key="Alien-Species-key"
+    >
+      <input
+        checked={false}
+        className="form-check-input"
+        id="Alien-Species"
+        name="selectedSpecies"
+        onChange={[Function]}
+        type="checkbox"
+        value="Alien"
+      />
+      <label
+        aria-label="Species"
+        className="form-check-label"
+        htmlFor="Alien-Species"
+      >
+        Alien
+      </label>
+    </div>
+    <div
+      className="form-check"
+      key="Humen-Species-key"
+    >
+      <input
+        checked={true}
+        className="form-check-input"
+        id="Humen-Species"
+        name="selectedSpecies"
+        onChange={[Function]}
+        type="checkbox"
+        value="Humen"
+      />
+      <label
+        aria-label="Species"
+        className="form-check-label"
+        htmlFor="Humen-Species"
+      >
+        Humen
+      </label>
+    </div>
+  </div>
+</SideFilterBox>
+`;
