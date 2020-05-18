@@ -182,39 +182,6 @@ class MainApp extends React.Component {
     this.setState({ width: window.innerWidth, height: window.innerHeight });
   };
 
-  /**
-   * @description - API call to get character list and set result in component state
-   */
-  getCharacterDetails = () => {
-    axios.get(`https://rickandmortyapi.com/api/character`).then((response) => {
-      const newState = this.state;
-      const { results } = response.data;
-      newState.characters = response.data.results;
-      newState.showOnlyLoader = false;
-      newState.filterOptions.species = results
-        .map((character) => {
-          return character.species;
-        })
-        .filter(this.onlyUnique);
-      newState.filterOptions.gender = results
-        .map((character) => {
-          return character.gender;
-        })
-        .filter(this.onlyUnique);
-      newState.filterOptions.origin = results
-        .map((character) => {
-          return character.origin.name;
-        })
-        .filter(this.onlyUnique);
-      newState.filterOptions.names = results
-        .map((character) => {
-          return character.name;
-        })
-        .filter(this.onlyUnique);
-      this.setState(newState);
-    });
-  };
-
   render() {
     const {
       showOnlyLoader,
