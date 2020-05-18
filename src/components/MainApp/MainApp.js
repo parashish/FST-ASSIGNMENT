@@ -200,73 +200,78 @@ class MainApp extends React.Component {
     return showOnlyLoader ? (
       <img className="whole-loader" src={Loader} alt="Loading..." />
     ) : (
-      <div className="main-wrapper" role="main">
-        <div className="filter-section">
-          <Filters
-            selected={{
-              species: selectedSpecies,
-              gender: selectedGender,
-              origin: selectedOrigin,
-            }}
-            onChangeCheckboxObject={this.onChangeCheckboxObject}
-            filterOptions={filterOptions}
-            onClickShowFilters={this.onClickShowFilters}
-            screenSize={{
-              height,
-              width,
-            }}
-            showFiltersOnMobile={showFiltersOnMobile}
-            onChangeObject={this.onChangeObject}
-          />
+      <React.Fragment>
+        <div className="heading">
+          <h1>Rick Morty Cartoon List</h1>
         </div>
-        <div className="main-section">
-          {(width >= 768 || showFiltersOnMobile) && (
-            <Header
-              onRemoveItem={this.onRemoveItem}
-              onChangeCheckboxObject={this.onChangeCheckboxObject}
+        <div className="main-wrapper" role="main">
+          <div className="filter-section">
+            <Filters
               selected={{
                 species: selectedSpecies,
                 gender: selectedGender,
                 origin: selectedOrigin,
-                names: selectedNames,
               }}
+              onChangeCheckboxObject={this.onChangeCheckboxObject}
               filterOptions={filterOptions}
-              sortById={sortById}
+              onClickShowFilters={this.onClickShowFilters}
+              screenSize={{
+                height,
+                width,
+              }}
+              showFiltersOnMobile={showFiltersOnMobile}
               onChangeObject={this.onChangeObject}
-              onSearch={this.onSearch}
-              nameFilterOptions={nameFilterOptions}
             />
-          )}
-          <div className="cards">
-            {characters
-              .filter((character) => {
-                return (
-                  (selectedSpecies.length === 0 ||
-                    selectedSpecies.indexOf(character.species) !== -1) &&
-                  (selectedGender.length === 0 ||
-                    selectedGender.indexOf(character.gender) !== -1) &&
-                  (selectedOrigin.length === 0 ||
-                    selectedOrigin.indexOf(character.origin.name) !== -1) &&
-                  (selectedNames.length === 0 ||
-                    selectedNames.indexOf(character.name.split(' ')[0]) !==
-                      -1 ||
-                    selectedNames.indexOf(character.name.split(' ')[1]) !==
-                      -1 ||
-                    selectedNames.indexOf(character.name) !== -1)
-                );
-              })
-              .sort((a, b) => {
-                if (sortById === 'asc' && a.id > b.id) return 1;
-                return -1;
-              })
-              .map((character) => {
-                return (
-                  <CharacterList key={character.id} character={character} />
-                );
-              })}
+          </div>
+          <div className="main-section">
+            {(width >= 768 || showFiltersOnMobile) && (
+              <Header
+                onRemoveItem={this.onRemoveItem}
+                onChangeCheckboxObject={this.onChangeCheckboxObject}
+                selected={{
+                  species: selectedSpecies,
+                  gender: selectedGender,
+                  origin: selectedOrigin,
+                  names: selectedNames,
+                }}
+                filterOptions={filterOptions}
+                sortById={sortById}
+                onChangeObject={this.onChangeObject}
+                onSearch={this.onSearch}
+                nameFilterOptions={nameFilterOptions}
+              />
+            )}
+            <div className="cards">
+              {characters
+                .filter((character) => {
+                  return (
+                    (selectedSpecies.length === 0 ||
+                      selectedSpecies.indexOf(character.species) !== -1) &&
+                    (selectedGender.length === 0 ||
+                      selectedGender.indexOf(character.gender) !== -1) &&
+                    (selectedOrigin.length === 0 ||
+                      selectedOrigin.indexOf(character.origin.name) !== -1) &&
+                    (selectedNames.length === 0 ||
+                      selectedNames.indexOf(character.name.split(' ')[0]) !==
+                        -1 ||
+                      selectedNames.indexOf(character.name.split(' ')[1]) !==
+                        -1 ||
+                      selectedNames.indexOf(character.name) !== -1)
+                  );
+                })
+                .sort((a, b) => {
+                  if (sortById === 'asc' && a.id > b.id) return 1;
+                  return -1;
+                })
+                .map((character) => {
+                  return (
+                    <CharacterList key={character.id} character={character} />
+                  );
+                })}
+            </div>
           </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }

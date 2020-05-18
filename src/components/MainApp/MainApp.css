@@ -1,6 +1,13 @@
 body {
   background-color: #e5eaef;
 }
+.heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #425265;
+  color: white;
+}
 .whole-loader {
   left: 50%;
   margin-left: -10em;
